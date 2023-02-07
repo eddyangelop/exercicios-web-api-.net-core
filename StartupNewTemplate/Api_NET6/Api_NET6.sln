@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api_NET6", "Api_NET6\Api_NET6.csproj", "{071BDFBF-3A57-488D-95EF-C27783DC2949}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{071BDFBF-3A57-488D-95EF-C27783DC2949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{071BDFBF-3A57-488D-95EF-C27783DC2949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{071BDFBF-3A57-488D-95EF-C27783DC2949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{071BDFBF-3A57-488D-95EF-C27783DC2949}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D067352C-77FD-4BD0-A526-DBC80ECFC679}
+	EndGlobalSection
+EndGlobal
