@@ -1,9 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<AppDbContext>(opt =>
+opt.UseInMemoryDatabase("TarefasDB"));
 
 var app = builder.Build();
 
@@ -18,6 +21,32 @@ app.MapGet("/", () => "Olá Mundo");
 
 
 app.MapGet("frases", async () =>
-    await new HttpClient().GetStringAsync("https://ron-swanson-quotes.herokuapp.com/v2/quotes"));
+    await new HttpClient().GetStringAsync("https://ron-swanson-quotes.herokuapp.com/v2/quotes")
+    );
+
+app.MapGet("/Tarefas", async (AppDbContext db) => await db.Tarefas.ToListAsync());
+
+app.MapPost("/Tarefas", async(Tarefa tarefa, AppDbContext db) =>
+{
+    db.Tarefas.Add(tarefa);
+    await db.SaveChangesAsync();
+    return Results.Created($"/Tarefas/{tarefa.Id}", tarefa);
+});
 
 app.Run();
+
+class Tarefa
+{
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public bool IsConcluida { get; set; }
+}
+
+class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    {
+    }
+
+    public DbSet<Tarefa> Tarefas => Set<Tarefa>();
+}
