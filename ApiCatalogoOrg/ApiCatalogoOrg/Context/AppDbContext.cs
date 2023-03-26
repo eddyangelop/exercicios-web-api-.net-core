@@ -25,7 +25,6 @@ namespace ApiCatalogoOrg.Context
                                   .IsRequired();
 
 
-
             // Produto
             mb.Entity<Produto>().HasKey(c => c.CategoriaId);
 

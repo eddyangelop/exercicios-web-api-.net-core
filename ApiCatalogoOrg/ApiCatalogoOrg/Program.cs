@@ -15,6 +15,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 var app = builder.Build();
+// definir os endpoints
+
+app.MapGet("/", () => "Catálogo de Produtos - 2023");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
