@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0g1JtibJi/5tBVzZKOZdmj6d3c+rWuFO3G421yivwOLvPk7l4D0ExsUn0Rq8NR/raU5J471mVzH/Bj1WQxXLuA==",
+  "dgSpecHash": "XOc01MHel40HLUeDDvWLl21rC/m74PQgu2e/v6wNYmRXZJXmSlqaQ5iwE6sPzAu/zAA0O61rNXuSrQhex7CYMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\edson\\Downloads\\Documents\\Cursos_mat_estudos\\Web API ASP .NET Core\\Aulas-Projects\\ProjetoApiMin\\ProjetoApiMin\\ProjetoApiMin.csproj",
+  "projectFilePath": "C:\\Users\\edson\\Downloads\\Documents\\Cursos_mat_estudos\\Web_API_ASP_dotNET_Core\\Aulas-Projects\\ProjetoApiMin\\ProjetoApiMin\\ProjetoApiMin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\edson\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

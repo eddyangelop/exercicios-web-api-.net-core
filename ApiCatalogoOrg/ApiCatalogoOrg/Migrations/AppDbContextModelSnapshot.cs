@@ -42,6 +42,10 @@ namespace ApiCatalogoOrg.Migrations
 
             modelBuilder.Entity("ApiCatalogoOrg.Models.Produto", b =>
                 {
+                    b.Property<int>("ProdutoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoriaId")
                         .HasColumnType("int");
 
@@ -64,11 +68,13 @@ namespace ApiCatalogoOrg.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("Preco")
+                    b.Property<decimal?>("Preco")
                         .HasPrecision(14, 2)
-                        .HasColumnType("longtext");
+                        .HasColumnType("decimal(14,2)");
 
-                    b.HasKey("CategoriaId");
+                    b.HasKey("ProdutoId");
+
+                    b.HasIndex("CategoriaId");
 
                     b.ToTable("Produtos");
                 });

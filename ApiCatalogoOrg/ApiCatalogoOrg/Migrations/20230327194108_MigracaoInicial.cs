@@ -36,21 +36,22 @@ namespace ApiCatalogoOrg.Migrations
                 name: "Produtos",
                 columns: table => new
                 {
-                    CategoriaId = table.Column<int>(type: "int", nullable: false),
+                    ProdutoId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Descricao = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Preco = table.Column<string>(type: "longtext", precision: 14, scale: 2, nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Preco = table.Column<decimal>(type: "decimal(14,2)", precision: 14, scale: 2, nullable: true),
                     Imagem = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     DataCompra = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    Estoque = table.Column<int>(type: "int", nullable: false)
+                    Estoque = table.Column<int>(type: "int", nullable: false),
+                    CategoriaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Produtos", x => x.CategoriaId);
+                    table.PrimaryKey("PK_Produtos", x => x.ProdutoId);
                     table.ForeignKey(
                         name: "FK_Produtos_Categorias_CategoriaId",
                         column: x => x.CategoriaId,
@@ -59,6 +60,11 @@ namespace ApiCatalogoOrg.Migrations
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Produtos_CategoriaId",
+                table: "Produtos",
+                column: "CategoriaId");
         }
 
         /// <inheritdoc />

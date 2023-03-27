@@ -231,11 +231,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edson\\Downloads\\Documents\\Cursos_mat_estudos\\Web API ASP .NET Core\\Aulas-Projects\\WebApi_Net6\\WebApi_Net6\\WebApi_Net6.csproj",
+      "projectUniqueName": "C:\\Users\\edson\\Downloads\\Documents\\Cursos_mat_estudos\\Web_API_ASP_dotNET_Core\\Aulas-Projects\\WebApi_Net6\\WebApi_Net6\\WebApi_Net6.csproj",
       "projectName": "WebApi_Net6",
-      "projectPath": "C:\\Users\\edson\\Downloads\\Documents\\Cursos_mat_estudos\\Web API ASP .NET Core\\Aulas-Projects\\WebApi_Net6\\WebApi_Net6\\WebApi_Net6.csproj",
+      "projectPath": "C:\\Users\\edson\\Downloads\\Documents\\Cursos_mat_estudos\\Web_API_ASP_dotNET_Core\\Aulas-Projects\\WebApi_Net6\\WebApi_Net6\\WebApi_Net6.csproj",
       "packagesPath": "C:\\Users\\edson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edson\\Downloads\\Documents\\Cursos_mat_estudos\\Web API ASP .NET Core\\Aulas-Projects\\WebApi_Net6\\WebApi_Net6\\obj\\",
+      "outputPath": "C:\\Users\\edson\\Downloads\\Documents\\Cursos_mat_estudos\\Web_API_ASP_dotNET_Core\\Aulas-Projects\\WebApi_Net6\\WebApi_Net6\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -294,7 +294,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }

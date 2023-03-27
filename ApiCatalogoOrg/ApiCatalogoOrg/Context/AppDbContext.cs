@@ -26,7 +26,7 @@ namespace ApiCatalogoOrg.Context
 
 
             // Produto
-            mb.Entity<Produto>().HasKey(c => c.CategoriaId);
+            mb.Entity<Produto>().HasKey(c => c.ProdutoId);
 
             mb.Entity<Produto>().Property(c => c.Nome)
                                  .HasMaxLength(100)
