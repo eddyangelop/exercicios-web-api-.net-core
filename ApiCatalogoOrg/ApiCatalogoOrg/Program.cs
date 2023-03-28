@@ -18,8 +18,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 var app = builder.Build();
 // definir os endpoints
 
-app.MapGet("/", () => "Catálogo de Produtos - 2023");
 
+//Get Swagger
+app.MapGet("/", () => "Catálogo de Produtos - 2023").ExcludeFromDescription();
+
+
+//Post
 app.MapPost("/categorias", async (Categoria categoria, AppDbContext db)
     =>
 {
@@ -29,10 +33,10 @@ app.MapPost("/categorias", async (Categoria categoria, AppDbContext db)
     return Results.Created($"/categorias/{categoria.CategoriaId}", categoria);
 });
 
-
+//Get
 app.MapGet("/categorias", async (AppDbContext db) => await db.Categorias.ToListAsync());
 
-
+//GetId
 app.MapGet("/categorias/{id:int}", async (int id, AppDbContext db)
     =>
 {
@@ -42,7 +46,7 @@ app.MapGet("/categorias/{id:int}", async (int id, AppDbContext db)
                  : Results.NotFound();
 });
 
-
+//PutId
 app.MapPut("/categorias/{id:int}", async (int id, Categoria categoria, AppDbContext db)
     =>
 {
@@ -60,6 +64,23 @@ app.MapPut("/categorias/{id:int}", async (int id, Categoria categoria, AppDbCont
 
     await db.SaveChangesAsync();
     return Results.Ok(categoriaDB);
+});
+
+//DeleteId
+app.MapDelete("/categorias/{id:int}", async (int id, AppDbContext db)
+    =>
+{
+    var Categoria = await db.Categorias.FindAsync(id);
+
+    if(Categoria is null)
+    {
+        return Results.NotFound();
+    }
+
+    db.Categorias.Remove(Categoria);
+    await db.SaveChangesAsync();
+
+    return Results.NoContent();
 });
 
 
